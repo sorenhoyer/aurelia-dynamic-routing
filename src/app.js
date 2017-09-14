@@ -6,6 +6,15 @@ export class App {
   }
 
   configureRouter(config, router) {
+    // basically these 3 lines are the problem.
+    // i don't like hardcoding such things - this should always happen dynamically
+    // any ideas?
+    // var dynamicModuleName = 'views/layout';
+    // PLATFORM.moduleName(dynamicModuleName); // this does not work
+    PLATFORM.moduleName('views/layout');
+    PLATFORM.moduleName('views/home');
+    PLATFORM.moduleName('views/posts');
+
     config.title = 'SorenHoyer.com';
     config.options.pushState = true;
 
