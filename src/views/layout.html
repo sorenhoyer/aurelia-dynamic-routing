@@ -1,0 +1,14 @@
+<template>
+	<head>
+		<slot name="head"></slot>
+	</head>
+  <body>
+    <nav>
+      <ul>
+        <li><a route-href="route.bind: 'dynamic'; params.bind: {url: ''}" class="${router.currentInstruction.config.href === '/' ? 'active' : ''}">Home</a></li>
+        <li><a route-href="route.bind: 'dynamic'; params.bind: {url: 'posts'}" class="${router.currentInstruction.config.href === '/posts' ? 'active' : ''}">Posts</a></li>
+      </ul>
+    </nav>
+	  <slot name="body"></slot>
+  <body>
+</template>
